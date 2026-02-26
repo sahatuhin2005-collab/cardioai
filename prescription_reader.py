@@ -13,7 +13,10 @@ import cv2
 import numpy as np
 from PIL import Image
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+import shutil
+tesseract_path = shutil.which("tesseract")
+if tesseract_path:
+    pytesseract.pytesseract.tesseract_cmd = tesseract_path
 import pdfplumber
 
 logger = logging.getLogger(__name__)
