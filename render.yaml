@@ -5,5 +5,5 @@ services:
     buildCommand: "apt-get install -y tesseract-ocr && pip install -r requirements.txt"
     startCommand: "gunicorn app:app"
     envVars:
-      - key: GROQ_API_KEY
+      - key: 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
         sync: false
