@@ -2,6 +2,8 @@
 prescription_reader.py
 Handles reading prescriptions from images, PDFs, or plain text.
 """
+import os
+os.environ['TESSDATA_PREFIX'] = '/usr/share/tesseract-ocr/4.00/tessdata'
 import subprocess
 import sys
 
