@@ -2,8 +2,5 @@ services:
   - type: web
     name: cardioai
     env: python
-    buildCommand: "sudo apt-get install -y tesseract-ocr && pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
-    envVars:
-      - key: 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
-        sync: false
+    buildCommand: apt-get install -y tesseract-ocr && pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
