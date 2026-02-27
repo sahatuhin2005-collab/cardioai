@@ -2,7 +2,13 @@
 prescription_reader.py
 Handles reading prescriptions from images, PDFs, or plain text.
 """
+import subprocess
+import sys
 
+try:
+    pytesseract.get_tesseract_version()
+except:
+    subprocess.run(['pip', 'install', 'pytesseract'], check=True)
 import os
 import re
 import logging
